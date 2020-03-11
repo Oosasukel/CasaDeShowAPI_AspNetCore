@@ -2644,11 +2644,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\rodri\\Downloads\\TestsAltamentePerigosos\\CasaDeShowAPI\\AspNetCore\\CasaDeShowAPI\\CasaDeShowAPI.csproj",
+      "projectUniqueName": "C:\\Users\\rodri\\Documents\\GFT\\GitHub\\CasaDeShowAPI_AspNetCore\\CasaDeShowAPI.csproj",
       "projectName": "CasaDeShowAPI",
-      "projectPath": "c:\\Users\\rodri\\Downloads\\TestsAltamentePerigosos\\CasaDeShowAPI\\AspNetCore\\CasaDeShowAPI\\CasaDeShowAPI.csproj",
+      "projectPath": "C:\\Users\\rodri\\Documents\\GFT\\GitHub\\CasaDeShowAPI_AspNetCore\\CasaDeShowAPI.csproj",
       "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\rodri\\Downloads\\TestsAltamentePerigosos\\CasaDeShowAPI\\AspNetCore\\CasaDeShowAPI\\obj\\",
+      "outputPath": "C:\\Users\\rodri\\Documents\\GFT\\GitHub\\CasaDeShowAPI_AspNetCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",

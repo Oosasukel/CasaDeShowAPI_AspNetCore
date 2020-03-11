@@ -19,7 +19,7 @@ namespace CasaDeShowAPI
                 .Build();
             var hostUrl = configuration["hosturl"];
             if (string.IsNullOrEmpty(hostUrl))
-                hostUrl = "http://0.0.0.0:6000";
+                hostUrl = "http://0.0.0.0:8080";
 
             var host = new WebHostBuilder()
             .UseKestrel()

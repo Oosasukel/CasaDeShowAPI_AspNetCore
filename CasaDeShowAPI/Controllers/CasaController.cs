@@ -42,6 +42,27 @@ namespace CasaDeShowAPI.Controllers
             return NotFound("Casa não encontrada");
         }
 
+        [HttpPost]
+        [Authorize]
+        public IActionResult PostCasa([FromBody] CasaForm casaForm){
+            if(ModelState.IsValid){
+                Casa casa = casaForm.ToCasa();
+                casa.UsuarioEmail = User.Identity.Name;
+
+                try{
+                    _casaRepository.Add(casa);
+                } catch (Exception e){
+                    return StatusCode(500, "Erro ao conectar com o banco. " + e.Message);
+                }
+
+                var uri = Url.Action("GetCasa", new { id = casa.Id});
+                var eventosUri = Url.Action("GetEventos", new {id = casa.Id});
+                return Created(uri, casa.ToCasaResponse(eventosUri));
+            }
+            
+            return BadRequest("Requisição inválida.");
+        }
+
         [HttpGet("{id}/eventos")]
         public List<EventoResponse> GetEventos(string id){
             var eventos = _casaRepository.GetEventos(id);
@@ -125,27 +146,6 @@ namespace CasaDeShowAPI.Controllers
             var casas = _casaRepository.GetByEmail(email);
             var casasResponses = CasaToCasaResponse(casas);
             return Ok(casasResponses);
-        }
-
-        [HttpPost]
-        [Authorize]
-        public IActionResult PostCasa([FromBody] CasaForm casaForm){
-            if(ModelState.IsValid){
-                Casa casa = casaForm.ToCasa();
-                casa.UsuarioEmail = User.Identity.Name;
-
-                try{
-                    _casaRepository.Add(casa);
-                } catch (Exception e){
-                    return StatusCode(500, "Erro ao conectar com o banco. " + e.Message);
-                }
-
-                var uri = Url.Action("GetCasa", new { id = casa.Id});
-                var eventosUri = Url.Action("GetEventos", new {id = casa.Id});
-                return Created(uri, casa.ToCasaResponse(eventosUri));
-            }
-            
-            return BadRequest("Requisição inválida.");
         }
     }
 }
