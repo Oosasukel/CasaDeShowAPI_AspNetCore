@@ -1,1 +1,1 @@
-http://35.198.6.252:8080/swagger/index.html
+http://35.198.6.252:8080/swagger/index.html -Desativado para não gastar os créditos do Google Cloud
